@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Roboto&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;500&family=Roboto&family=Tilt+Warp&display=swap');
 
 
 body {
@@ -7,6 +7,7 @@ body {
     --primary-color: #000;
     --anchor-background: #FFFFFF;
 }
+
 body.dark-theme {
     --primary-background: #000;
     --primary-color: #FFFFFF;
@@ -23,7 +24,9 @@ body.dark-theme {
 }
 
 /* start nav */
-li, a, button{
+li,
+a,
+button {
     font-family: "Oswald", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -48,8 +51,8 @@ header {
 }
 
 .nav__links li {
-display: inline-block;
-padding: 0px 20px;
+    display: inline-block;
+    padding: 0px 20px;
 }
 
 .nav__links li a {
@@ -57,10 +60,10 @@ padding: 0px 20px;
 }
 
 .nav__links li a:hover {
-color: #B49FDD;
+    color: #B49FDD;
 }
 
-button{
+button {
     padding: 9px 25px;
     background-color: var(--anchor-background);
     border: 1px solid var(--primary-color);
@@ -86,7 +89,7 @@ label {
     display: block;
     background: #949494;
     border-radius: 200px;
-    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
     cursor: pointer;
 }
 
@@ -99,7 +102,7 @@ label:after {
     left: 10px;
     background: linear-gradient(180deg, #B49FDD, #B49FDD);
     border-radius: 180px;
-    box-shadow: 0px 5px 10px rgba(0,0,0,20);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 20);
 }
 
 input {
@@ -108,17 +111,18 @@ input {
     visibility: hidden;
 }
 
-input:checked + label {
+input:checked+label {
     background: #242424;
 }
 
-input:checked + label:after {
+input:checked+label:after {
     left: 90px;
     transform: translateX(-100%);
     background: linear-gradient(180deg, #777, #3a3a3a);
 }
 
-label, label:after {
+label,
+label:after {
     transition: 0.3s;
 }
 
@@ -135,7 +139,7 @@ label:active:after {
     transition: 0.3s;
 }
 
-input:checked + label + .background {
+input:checked+label+.background {
     background: #242424;
 }
 
@@ -217,7 +221,7 @@ input:checked + label + .background {
     margin-right: auto;
 }
 
-.footer-social-icon svg:hover path{
+.footer-social-icon svg:hover path {
     color: #B49FDD;
     transition: all 0.5s ease 0s;
 
@@ -234,3 +238,62 @@ input:checked + label + .background {
 }
 
 /* end footer */
+
+/* Loader CSS */
+.loader {
+    background-color: #F6F6F6;
+    z-index: 999;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: fade-out-loader 5s 2s ease-out forwards;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.loader h2,
+.loader span {
+    background-color: unset;
+}
+
+.loader h2 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    animation: fade-out 2s ease-out forwards;
+}
+
+.loader span {
+    font-size: 2.5rem;
+    font-weight: 300;
+    animation: fade-out 4s ease-out forwards;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out-loader {
+    0% {
+        display: flex;
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+/* Loader CSS */
