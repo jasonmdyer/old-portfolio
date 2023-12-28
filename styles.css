@@ -2,16 +2,16 @@
 
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
-h3, 
+h3,
 p {
     margin: 0;
     text-align: center;
 }
 
-body{
+body {
     --primary-background: #FFFFFF;
     --primary-color: #000;
     --anchor-background: #FFFFFF;
@@ -51,6 +51,21 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 20px 10%;
+}
+
+header .mobile-hamburger {
+    display: none;
+}
+
+header .mobile-hamburger svg {
+    width: 35px;
+    fill: var(--primary-color);
+}
+
+header .mobile {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -108,8 +123,8 @@ button {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;  
-    transform:translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
     height: 4px;
     width: 100px;
     background-color: #ed1d81;
@@ -132,9 +147,10 @@ button {
     cursor: pointer;
 }
 
-.skill-box:hover > .skill-title:after, .skill-box:hover > .skill-title:before {
+.skill-box:hover>.skill-title:after,
+.skill-box:hover>.skill-title:before {
     width: 40px;
-opacity: 1;
+    opacity: 1;
 }
 
 .skill-title {
@@ -181,8 +197,8 @@ opacity: 1;
     align-items: center;
 }
 
-.skill-title h3{
-    color: #000000;
+.skill-title h3 {
+    color: var(--primary-color);
     margin-top: 0.2rem;
 }
 
@@ -192,7 +208,9 @@ opacity: 1;
 }
 
 
-
+.skill-box svg path {
+    fill: var(--primary-color);
+}
 
 
 /* Dark Mode CSS */
@@ -245,8 +263,7 @@ label:active:after {
     width: 40px;
 }
 
-.background,
- {
+.background {
     width: 100vw;
     height: 100vh;
     background: #fff;
@@ -260,6 +277,7 @@ input:checked+label+.background {
 }
 
 /* Dark Mode CSS */
+
 
 /* Footer CSS */
 
@@ -413,3 +431,51 @@ input:checked+label+.background {
 }
 
 /* Loader CSS */
+
+/* Responsive CSS  */
+
+@media (max-width:640px) {
+    .footer-social-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    header {
+        padding: 20px;
+        position: relative;
+    }
+
+    header .mobile-hamburger {
+        width: 75%;
+    }
+
+    header .mobile {
+        position: absolute;
+        width: 100%;
+        top: 90px;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        z-index: 999;
+        gap: 1rem;
+        display: none;
+    }
+
+    header .mobile.show {
+        display: flex;
+    }
+
+    header .mobile .footer-social {
+        margin: 0;
+    }
+
+    header .mobile-hamburger {
+        display: block;
+    }
+
+    .img {
+        width: 50px;
+        height: 50px;
+    }
+}
