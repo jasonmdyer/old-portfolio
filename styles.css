@@ -11,8 +11,7 @@ p {
     text-align: center;
 }
 
-body {
-    font-family: "Oswald", sans-serif;
+body{
     --primary-background: #FFFFFF;
     --primary-color: #000;
     --anchor-background: #FFFFFF;
@@ -31,6 +30,8 @@ body.dark-theme {
     background-color: var(--primary-background);
     color: var(--primary-color);
     transition: 0.5s all;
+    font-family: "Oswald", sans-serif;
+
 }
 
 /* Nav CSS */
@@ -49,7 +50,7 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 30px 10%;
+    padding: 20px 10%;
 }
 
 .logo {
@@ -63,7 +64,7 @@ header {
 
 .nav__links li {
     display: inline-block;
-    padding: 0px 20px;
+    padding: 0px 15px;
 }
 
 .nav__links li a {
@@ -90,6 +91,109 @@ button {
 }
 
 /* Nav CSS */
+
+/* Skills CSS */
+.inner {
+    padding-top: 20px;
+}
+
+.header {
+    text-align: center;
+    color: #000000;
+    padding: 15px;
+    position: relative;
+}
+
+.header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;  
+    transform:translateX(-50%);
+    height: 4px;
+    width: 100px;
+    background-color: #ed1d81;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 135px);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 0.5rem;
+    padding: 0.25rem;
+    font-size: 1rem;
+}
+
+.skill-box {
+    padding: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.skill-box:hover > .skill-title:after, .skill-box:hover > .skill-title:before {
+    width: 40px;
+opacity: 1;
+}
+
+.skill-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.skill-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    opacity: 0;
+    height: 4px;
+    border-radius: 2px 0 0 2px;
+    background-color: #ed1d81;
+    transition: .3s;
+}
+
+.skill-title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    opacity: 0;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background-color: #ed1d81;
+    transition: .3s;
+}
+
+.img {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-title h3{
+    color: #000000;
+    margin-top: 0.2rem;
+}
+
+.skill-icon {
+    width: 80px;
+    z-index: 2;
+}
+
+
+
+
 
 /* Dark Mode CSS */
 
@@ -141,7 +245,8 @@ label:active:after {
     width: 40px;
 }
 
-.background {
+.background,
+ {
     width: 100vw;
     height: 100vh;
     background: #fff;
