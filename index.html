@@ -17,7 +17,7 @@
     <div class="loader">
         <h2></h2> <span>Welcome.</span>
     </div>
-    <header>
+    <header id="site-header">
 
         <!--Loader HTML-->
 
@@ -213,6 +213,25 @@
                     $('header .mobile').toggleClass('show');
                 });
             </script>
+            <script>
+                $(document).ready(function () {
+                    var lastScrollTop = 0;
+                    var header = $("#site-header");
+
+                    $(window).scroll(function (event) {
+                        var st = $(this).scrollTop();
+                        if (st > lastScrollTop) {
+                            // Scrolling down
+                            header.addClass("so-fixed");
+                        } else {
+                            // Scrolling up
+                            header.removeClass("so-fixed");
+                        }
+                        lastScrollTop = st;
+                    });
+                });
+            </script>
+
 
 
 </body>
