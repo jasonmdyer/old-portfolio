@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;500&family=Roboto&family=Tilt+Warp&display=swap');
 
 
-html {
+* {
     scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-background);
+    color: var(--primary-color);
+    transition: 0.5s all;
+    font-family: "Oswald", sans-serif;
 }
 
 h1 {
@@ -40,7 +47,6 @@ h6 {
 
 }
 
-
 p {
     margin: 0;
     font-weight: 200;
@@ -60,16 +66,40 @@ body.dark-theme {
     --anchor-background: #000;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-background);
-    color: var(--primary-color);
-    transition: 0.5s all;
-    font-family: "Oswald", sans-serif;
 
+/* Projects Grid CSS */ 
+
+.card {
+    text-align: center;
+    background-color: #d2d1d1;
+    color: white;
+    padding: 1rem;
+    height: 12rem;
+    border-radius: 30px;
+    cursor: pointer;
 }
+
+.cards {
+    padding-top: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Projects Grid CSS */
 
 /* Resume CSS */
 
@@ -188,8 +218,9 @@ button {
 /* Nav CSS */
 
 /* Skills CSS */
+
 .inner {
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .header {
@@ -329,7 +360,7 @@ input:checked+label {
 }
 
 input:checked+label:after {
-    left: 90px;
+    left: 85px;
     transform: translateX(-100%);
     background: linear-gradient(180deg, #4d4d4d, #262626);
 }
@@ -466,7 +497,7 @@ input:checked+label+.background {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    animation: fade-out-loader 5s 2s ease-out forwards;
+    animation: fade-out-loader 2s 3s ease-out forwards;
     overflow: hidden;
     pointer-events: none;
 }
@@ -478,14 +509,14 @@ input:checked+label+.background {
 
 .loader h2 {
     font-weight: 500;
-    font-size: 2.5rem;
-    animation: fade-out 2s ease-out forwards;
+    font-size: 4rem;
+    animation: fade-out 1s ease-out forwards;
 }
 
 .loader span {
     font-size: 2.5rem;
     font-weight: 300;
-    animation: fade-out 4s ease-out forwards;
+    animation: fade-out 3s ease-out forwards;
 }
 
 @keyframes fade-out {
