@@ -184,7 +184,6 @@ header .mobile {
 }
 
 #site-header {
-    transition: transform 0.5s ease, opacity 0.5s ease;
     position: fixed;
     top: 0;
     left: 0;
@@ -193,14 +192,10 @@ header .mobile {
     /* Your background color */
     z-index: 999;
     transform: translateY(-100%);
-    /* Initially hidden */
-    opacity: 0;
 }
 
 .header-visible {
     transform: translateY(0) !important;
-    /* Show header */
-    opacity: 1 !important;
 }
 
 .logo {
